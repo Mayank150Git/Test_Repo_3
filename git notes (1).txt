@@ -1,0 +1,77 @@
+ssh -i Downloads\dev-vms-03-2021.pem ubuntu@qa11.flocareer.com
+cd flocareer
+git branch
+git pull
+
+username: venkatesh@flocareer.com 
+password: Flo@12345(you cant see password)
+git status:- check below files
+        modified:   backend/corporate/views.py
+        modified:   backend/floLearning/email.py
+        modified:   backend/floLearning/settings.py
+git diff:-checking the user emails
+       self.to = ["rahul.kumar@flocareer.com", "venkatesh@flocareer.com",
+       "nikhilsheth@flocareer.com", "vamsi@flocareer.com", "aashna@flocareer.com", "mahima@flocareer.com", "anurag@flocareer.com",
+       "jayant.singh@flocareer.com","saranya@flocareer.com","prateek.m@flocareer.com","ranjeet@flocareer.com", "chandu@0flocareer.com", 
+       "suraj@flocareer.com", "mayank@flocareer.com", "rahulparate@flocareer.com"]
+q
+exit
+
+how to change branch:-
+git checkout (used to change the branch)before checkout - git stash
+git checkout branch name
+after checkout - git stash pop/apply
+
+
+How to GIT PULL for Hotfix branch:
+
+git checkout hotfix/
+(All the Hotfix will be visible and keep pressing the Tab button to see other hot fix.)
+
+*if the Hot fix is not visible
+
+To Search the Hotfix: git checkout hotfix/name_of_hotfix
+ex: git checkout hotfix/flo2-1973-scheduling-page-display-45-mins-duration-from-drop-down
+
+*After searching if you do not find the hotfix, then we need to fetch the hotfix
+
+git fetch -a
+User name: venkatesh@flocareer.com
+Password: Flo@12345
+
+*Once the hotfix is visible
+
+git checkout hotfix/flo2-1937-scheduling-page-display-45-mins-duration-from-drop-down
+
+git status
+
+These four status should be there: 
+On branch hotfix/flo2-1937-scheduling-page-display-45-mins-duration-from-drop-down
+Your branch is up to date with 'origin/hotfix/flo2-1937-scheduling-page-display-45-mins-duration-from-drop-down'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   backend/corporate/models.py
+        modified:   backend/floLearning/email.py
+        modified:   backend/floLearning/sms.py
+        modified:   utilities/floCareerDb.cnf
+
+git branch
+
+git pull
+
+*In order to load if there is any change in data base
+
+cd /var/floLearning
+
+./build.sh
+
+reload
+
+cd (to come out)
+
+
+
+
+
+
